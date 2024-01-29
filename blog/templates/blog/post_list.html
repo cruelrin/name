@@ -1,0 +1,77 @@
+<html>
+    <head>
+        <title>Django Girls blog</title>
+        <style>
+            body {
+                background-color: #f5ebff; 
+                font-family: 'Surveyor SSm', sans-serif;
+                color: #333; 
+                text-align: center;
+                margin: 0;
+            }
+        
+            #header {
+                border: 2px solid #6a0dad; 
+                border-top: 0; 
+                padding: 20px;
+                background-color: #6a0dad; 
+                color: #fff; 
+                font-size: 64px; 
+                font-weight: bold;
+                width: 100%; 
+                margin: 0; 
+            }
+        
+            div {
+                margin: 20px auto; 
+                padding: 20px;
+                background-color: #fff; 
+                text-align: left;
+                width: 45%;
+            }
+        
+            h1, h2 {
+                font-size: 24px;
+                font-weight: bold;
+                color: #6a0dad; 
+            }
+        
+            a {
+                color: #6a0dad; 
+                text-decoration: none;
+            }
+        
+            p {
+                font-size: 16px;
+                color: #555; 
+            }
+        </style>
+        
+    </head>
+    <body>
+        <div id="header">
+            <h1><a href="/" style="color: #fff;">DJANGO GIRLS BLOG</a></h1>
+        </div>
+
+        <div>
+            <p style="font-weight: bold; color: #6a0dad;">published: 14.06.2014, 12:14</p>
+            <h2><a href="" style="color: #333;">My first post</a></h2>
+            <p style="color: #555;">Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+        </div>
+
+        <div>
+            <p style="font-weight: bold; color: #6a0dad;">published: 14.06.2014, 12:14</p>
+            <h2><a href="" style="color: #333;">My second post</a></h2>
+            <p style="color: #555;">Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut f.</p>
+        </div>
+
+        {% for post in posts %}
+            <div>
+                <p style="font-weight: bold; color: #6a0dad;">published: {{ post.published_date }}</p>
+                <h1><a href="">{{ post.title }}</a></h1>
+                <p style="color: #555;">{{ post.text|linebreaksbr }}</p>
+            </div>
+        {% endfor %}
+        
+    </body>
+</html>
